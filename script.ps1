@@ -1,9 +1,8 @@
-
-#$verrsion = git describe --tags --abbrev=0 --tags
-
+[string]$version = git describe --tags --abbrev=0 --tags
 
 
-$version = git tag
+
+#$version = git tag
 if  ($version -eq $null )
 {
     $NEW_TAG="V1.0.0"
