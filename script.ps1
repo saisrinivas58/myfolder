@@ -1,6 +1,10 @@
 
-$version = git describe --tags --abbrev=0 
-if  ([version]::IsNullOrEmpty)
+#$verrsion = git describe --tags --abbrev=0 --tags
+
+
+
+$version = git tag
+if  ($version -eq $null )
 {
     $NEW_TAG="V1.0.0"
     echo "No tag present."
@@ -10,8 +14,10 @@ if  ([version]::IsNullOrEmpty)
     echo "Tag created and pushed: $NEW_TAG"
   
 }
-else
-{
+
+
+
+
 $newvar=$version.Split(".")
 [string]$var1=$newvar[0]
 [int]$var2=$newvar[1]
@@ -36,4 +42,4 @@ else
     echo "Already a tag on this commit"
 
 }
-}
+
