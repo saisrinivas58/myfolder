@@ -2,7 +2,7 @@
 
 
 
-#$version = git tag
+#[string]$version = git tag
 if  ($version -eq $null )
 {
     $NEW_TAG="V1.0.0"
@@ -13,8 +13,7 @@ if  ($version -eq $null )
     echo "Tag created and pushed: $NEW_TAG"
   
 }
-
-
+else{
 
 
 $newvar=$version.Split(".")
@@ -42,3 +41,4 @@ else
 
 }
 
+}
