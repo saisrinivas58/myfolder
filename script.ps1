@@ -29,7 +29,7 @@ echo "Updating $version to $NEW_TAG"
 $GIT_COMMIT = git rev-parse HEAD
 echo "$GIT_COMMIT"
 $NEEDS_TAG = git describe --contains $GIT_COMMIT
-if ($NEEDS_TAG)
+if ($NEEDS_TAG -eq $null)
 {
     git tag $NEW_TAG
     echo "Tagged with $NEW_TAG"
